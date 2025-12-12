@@ -1,3 +1,4 @@
+const def = getId();
 function getId() {
     // ---------- Supporter ----------
     const isNum = v => v !== null && v !== '' && !Number.isNaN(Number(v));
@@ -10,7 +11,6 @@ function getId() {
     // ------- Element Defining -------
     const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const favicon = document.querySelector('link[rel="icon"]');
-    const faviconApple = document.querySelector('link[rel="apple-touch-icon"]');
     const topLinks = document.querySelectorAll(".top-link");
 
     const elementData = [
@@ -907,7 +907,8 @@ function getId() {
     const pwdContent = document.getElementById('pwdCharacterTypesContent');
 
     const snakeCanvas = document.getElementById("snakeCanvas");
-    const snakeCtx = snakeCanvas.getContext("2d");
+    const snakeCtx = null;
+    if(snakeCanvas) snakeCtx = snakeCanvas.getContext("2d");
     const snakeScoreHolder = document.getElementById("snakeScore");
     const snakeLeftBtn = document.getElementById("leftSnake");
     const snakeUpBtn = document.getElementById("upSnake");
@@ -929,7 +930,8 @@ function getId() {
     let snakeRunning = false;
 
     const jetShooterCanvas = document.getElementById('jetShooterCanvas');
-    const jetShooterCtx = jetShooterCanvas.getContext("2d");
+    const jetShooterCtx = null;
+    if(jetShooterCanvas) jetShooterCtx = jetShooterCanvas.getContext("2d");
     const jetShooterScoreHolder = document.getElementById("jetShooterScore");
     const jetShooterShieldHolder = document.getElementById("jetShooterShield");
     const jetShooterBulletHolder = document.getElementById("jetShooterBullets");
@@ -939,9 +941,10 @@ function getId() {
     const jetShooterStartBtn = document.getElementById("startJetShooterBtn");
     const jetShooterPauseBtn = document.getElementById("pauseJetShooterBtn");
     const jetShooterSize = Math.floor(window.innerHeight * 0.65);
-    jetShooterCanvas.width = 100 * Math.floor(jetShooterSize / 100);
-    jetShooterCanvas.height = 100 * Math.floor(jetShooterSize / 100);
-    let jetShooterBox = Math.floor(jetShooterCanvas.width / 100);
+    if (jetShooterCanvas) jetShooterCanvas.width = 100 * Math.floor(jetShooterSize / 100);
+    if (jetShooterCanvas) jetShooterCanvas.height = 100 * Math.floor(jetShooterSize / 100);
+    let jetShooterBox = null;
+    if (jetShooterCanvas) jetShooterBox = Math.floor(jetShooterCanvas.width / 100);
     let jetShooterFrameId = null;
     let gameFrameId = null;
     let jetShooterMessage = "";
@@ -1013,7 +1016,7 @@ function getId() {
 
     return {
         isNum, toNum, known, deg2rad, rad2deg, fmt,
-        darkMode, favicon, faviconApple, topLinks,
+        darkMode, favicon, topLinks,
         elementData, ptOut,
         piGamePi, piIndex, mistakesAllowed,
         fg2_state, opsToggle, opsContent, ng_secret, ng_tries,
