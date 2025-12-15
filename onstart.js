@@ -1,21 +1,21 @@
 
 // ------ Favicon Selection ------
 function setFavicon() {
-  if(def.darkMode) def.favicon.href = 'faviconNRB.ico';
-  else def.favicon.href = 'faviconNRB.png';
+  if(def.darkMode) def.favicon.href = 'https://neutroxity.tech/faviconNRB.ico';
+  else def.favicon.href = 'https://neutroxity.tech/faviconNRB.png';
 }
 setFavicon();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
 
 // ---------- Navigation ----------
 const navList = [
-  {key: "panel-home", url:"/homepanel.html"},
-  {key: "panel-math", url:"/mathpanel.html"},
-  {key: "panel-physics", url:"/physicspanel.html"},
-  {key: "panel-chemistry", url:"/chemistrypanel.html"},
-  {key: "panel-games", url:"/gamespanel.html"},
-  {key: "panel-utilities", url:"/utilitiespanel.html"},
-  {key: "panel-info", url:"/infopanel.html"},
+  {key: "panel-home", url:"https://neutroxity.tech/home/"},
+  {key: "panel-math", url:"https://neutroxity.tech/math/"},
+  {key: "panel-physics", url:"https://neutroxity.tech/physics/"},
+  {key: "panel-chemistry", url:"https://neutroxity.tech/chemistry/"},
+  {key: "panel-games", url:"https://neutroxity.tech/games/"},
+  {key: "panel-utilities", url:"https://neutroxity.tech/utilities/"},
+  {key: "panel-info", url:"https://neutroxity.tech/info/"},
 ];
 function switchTopPanel(e) {
   const targetPanelId = e.currentTarget.getAttribute("data-target");
@@ -61,6 +61,6 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     intro.remove();
     document.body.style.overflow = 'hidden';
-    window.location.href = "homepanel.html";
+    window.location.href = "https://neutroxity.tech/home/";
   }, 5000);
 });
