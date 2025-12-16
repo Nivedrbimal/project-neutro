@@ -19,7 +19,7 @@ function getId() {
     const snakeStartBtn = document.getElementById("startSnakeBtn");
     const snakePauseBtn = document.getElementById("pauseSnakeBtn");
     const snakeSize = Math.floor(window.innerHeight * 0.65);
-    let snakeBox = snakeBox = Math.floor(snakeSize / 25);
+    let snakeBox = Math.floor(snakeSize / 25);
     let snake, snakeDirection, snakeFood, snakeScore, snakeFoodsEaten;
     let snakeSpecialFood = null;
     let snakeHighScore;
@@ -44,7 +44,7 @@ function getId() {
     const jetShooterSize = Math.floor(window.innerHeight * 0.65);
     jetShooterCanvas.width = 100 * Math.floor(jetShooterSize / 100);
     jetShooterCanvas.height = 100 * Math.floor(jetShooterSize / 100);
-    let jetShooterBox = jetShooterBox = Math.floor(jetShooterCanvas.width / 100);
+    let jetShooterBox = Math.floor(jetShooterCanvas.width / 100);
     let jetShooterFrameId = null;
     let gameFrameId = null;
     let jetShooterMessage = "";
