@@ -10,7 +10,7 @@ function getId() {
     let ng_secret = null, ng_tries = 0;
 
     const snakeCanvas = document.getElementById("snakeCanvas");
-    let snakeCtx = snakeCtx = snakeCanvas.getContext("2d");
+    const snakeCtx = snakeCtx = snakeCanvas.getContext("2d");
     const snakeScoreHolder = document.getElementById("snakeScore");
     const snakeLeftBtn = document.getElementById("leftSnake");
     const snakeUpBtn = document.getElementById("upSnake");
@@ -32,7 +32,7 @@ function getId() {
     let snakeRunning = false;
 
     const jetShooterCanvas = document.getElementById('jetShooterCanvas');
-    let jetShooterCtx = jetShooterCanvas.getContext("2d");
+    const jetShooterCtx = jetShooterCanvas.getContext("2d");
     const jetShooterScoreHolder = document.getElementById("jetShooterScore");
     const jetShooterShieldHolder = document.getElementById("jetShooterShield");
     const jetShooterBulletHolder = document.getElementById("jetShooterBullets");
