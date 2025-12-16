@@ -10,7 +10,8 @@ setFavicon();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
 
 function updateColor(varName, color) {
-  def.root.style.setProperty(varName, color);
+  const root = document.documentElement;
+  root.style.setProperty(varName, color);
 }
 window.addEventListener('load', () => {
   ['accent1', 'accent2', 'background1', 'background2', 'accent5', 'accent6'].forEach(key => {
