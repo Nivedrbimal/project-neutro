@@ -29,26 +29,22 @@ async function signUp() {
     signUpOut.textContent = "Password must be between 6 and 30 characters.";
     return;
   }
-  if (!password.includes('!@#$&*-_')) {
-    signUpOut.textContent = "Password must include any of the following characters: \"!@#$&*-_\".";
-    return;
-  }
-  if (!password.includes('ABCDEFGHIJKLMNOPQRSTUVWXYZ')) {
-    signUpOut.textContent = "Password must include a capital letter.";
-    return;
-  }
-  if (!password.includes('abcdefghijklmnopqrstuvwxyz')) {
-    signUpOut.textContent = "Password must include a capital letter.";
-    return;
-  }
-  if (!password.includes('1234567890')) {
-    signUpOut.textContent = "Password must include a number.";
-    return;
-  }
-  if (!password.includes('!@#$&*-_')) {
-    signUpOut.textContent = "Password must include any of the following characters: \"!@#$&*-_\".";
-    return;
-  }
+  if (!/[!@#$&*\-_]/.test(password)) {
+  signUpOut.textContent = 'Password must include any of the following characters: "!@#$&*-_".';
+  return;
+}
+if (!/[A-Z]/.test(password)) {
+  signUpOut.textContent = "Password must include a capital letter.";
+  return;
+}
+if (!/[a-z]/.test(password)) {
+  signUpOut.textContent = "Password must include a lowercase letter.";
+  return;
+}
+if (!/[0-9]/.test(password)) {
+  signUpOut.textContent = "Password must include a number.";
+  return;
+}
   const email = username + "@neutroxity.com";
   try {
     const result = await auth.createUserWithEmailAndPassword(email, password);
