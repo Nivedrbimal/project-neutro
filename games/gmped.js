@@ -10,7 +10,7 @@ function getId() {
     let ng_secret = null, ng_tries = 0;
 
     const snakeCanvas = document.getElementById("snakeCanvas");
-    const snakeCtx = snakeCtx = snakeCanvas.getContext("2d");
+    const snakeCtx = snakeCanvas.getContext("2d");
     const snakeScoreHolder = document.getElementById("snakeScore");
     const snakeLeftBtn = document.getElementById("leftSnake");
     const snakeUpBtn = document.getElementById("upSnake");
