@@ -25,26 +25,6 @@ async function signUp() {
     signUpOut.textContent = "Username must be between 3 and 10 characters.";
     return;
   }
-//   if (password.length <6 || password.length > 30) {
-//     signUpOut.textContent = "Password must be between 6 and 30 characters.";
-//     return;
-//   }
-//   if (!/[!@#$&*\-_]/.test(password)) {
-//   signUpOut.textContent = 'Password must include any of the following characters: "!@#$&*-_".';
-//   return;
-// }
-// if (!/[A-Z]/.test(password)) {
-//   signUpOut.textContent = "Password must include a capital letter.";
-//   return;
-// }
-// if (!/[a-z]/.test(password)) {
-//   signUpOut.textContent = "Password must include a lowercase letter.";
-//   return;
-// }
-// if (!/[0-9]/.test(password)) {
-//   signUpOut.textContent = "Password must include a number.";
-//   return;
-// }
   const email = username + "@neutroxity.com";
   try {
     const result = await auth.createUserWithEmailAndPassword(email, password);
@@ -70,9 +50,12 @@ async function signUp() {
     passwordInput.value = '';
     signUpOut.textContent = '';
   } catch (err) {
-    console.error("Sign-up error:", err);
-    signUpOut.textContent = "Unable to create an account, please try again later. \nError: " + err;
-  }
+  console.error("Sign-up error:", err);
+  const rawMessage = err?.message ?? String(err);
+  const cleanedMessage = rawMessage.replace("Firebase: ", "").replace("FirebaseError: ", "");
+  signUpOut.textContent = "Unable to create an account, please try again.\nError: " + cleanedMessage;
+}
+
 }
 async function signIn() {
   const usernameInput = document.getElementById('loginUsername');
