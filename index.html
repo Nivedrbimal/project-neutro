@@ -13,25 +13,24 @@
   <link rel="stylesheet" href="style.css" />
   <meta name="author" content="Nived" />
   <script>
-(function () {
-  const root = document.documentElement;
-  const keys = {
-    accent1: '--accent1',
-    accent2: '--accent2',
-    background1: '--background1',
-    background2: '--background2',
-    accent5: '--accent5',
-    accent6: '--accent6'
-  };
-
-  for (const key in keys) {
-    const value = localStorage.getItem(key);
-    if (value) {
-      root.style.setProperty(keys[key], value);
-    }
-  }
-})();
-</script>
+    (function () {
+      const root = document.documentElement;
+      const keys = {
+        accent1: '--accent1',
+        accent2: '--accent2',
+        background1: '--background1',
+        background2: '--background2',
+        accent5: '--accent5',
+        accent6: '--accent6'
+      };
+      for (const key in keys) {
+        const value = localStorage.getItem(key);
+        if (value) {
+          root.style.setProperty(keys[key], value);
+        }
+      }
+    })();
+  </script>
 </head>
 
 <body>
